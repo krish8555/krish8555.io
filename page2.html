@@ -33,9 +33,10 @@
   </div>
 
   <script>
-    // Retrieve the username and password from the server (or from storage) and display them on the page
-    var username = "root";
-    var password = "123";
+    // Retrieve the username and password from the URL query parameters
+    const urlParams = new URLSearchParams(window.location.search);
+    const username = urlParams.get('username');
+    const password = urlParams.get('password');
 
     document.getElementById("username").textContent = username;
     document.getElementById("password").textContent = password;
