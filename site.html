@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Moving Gradient Background</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .moving-gradient {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      animation: animateGradient 20s linear infinite;
+      background: linear-gradient(to right, #f12711, #f5af19);
+      /* Replace the above line with the generated CSS gradient code */
+    }
+
+    @keyframes animateGradient {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    .content {
+      text-align: center;
+      position: relative;
+      z-index: 1;
+      padding: 50px;
+    }
+
+    h1 {
+      font-size: 48px;
+      color: #fff;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 24px;
+      color: #fff;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+      margin-bottom: 40px;
+    }
+  </style>
+</head>
+<body>
+  <div class="moving-gradient"></div>
+  <div class="content">
+    <h1>Welcome to My Moving Gradient Background</h1>
+    <p>This is an example of a website with a continuously moving gradient background.</p>
+  </div>
+</body>
+</html>
