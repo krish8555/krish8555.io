@@ -4,7 +4,6 @@
   <title>Page 3</title>
   <style>
     body {
-      background: linear-gradient(to bottom, #0F2027, #203A43, #2C5364);
       margin: 0;
       padding: 0;
       display: flex;
@@ -13,23 +12,25 @@
       height: 100vh;
       font-family: Arial, sans-serif;
       color: #fff;
+      background: linear-gradient(135deg, #667eea, #764ba2, #6B8DD6, #8E37D7);
+      background-size: 400% 400%;
+      animation: gradientAnimation 15s ease infinite;
+    }
+
+    @keyframes gradientAnimation {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
     }
 
     .container {
       text-align: center;
-    }
-
-    .container img {
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
-      margin-bottom: 20px;
-    }
-
-    .thought {
-      font-size: 24px;
-      line-height: 1.5;
-      margin-bottom: 20px;
     }
 
     .image-container {
@@ -39,10 +40,16 @@
     }
 
     .image-container img {
-      width: 200px;
+      width: 300px;
       height: 200px;
-      border-radius: 50%;
+      border-radius: 10px;
       margin: 0 10px;
+    }
+
+    .thought {
+      font-size: 24px;
+      line-height: 1.5;
+      margin-bottom: 20px;
     }
 
     .button-container {
@@ -69,12 +76,12 @@
 </head>
 <body>
   <div class="container">
-    <img src="image-placeholder.jpg" alt="Thought Image">
-    <p class="thought">START OF THE HOLY WAR</p>
     <div class="image-container">
+      <img src="image-placeholder.jpg" alt="Image 1">
       <img src="image2.jpg" alt="Image 2">
       <img src="image3.jpg" alt="Image 3">
     </div>
+    <p class="thought">START OF THE HOLY WAR</p>
     <div class="button-container">
       <a href="page1.html" class="button">Page 1</a>
       <a href="page2.html" class="button">Page 2</a>
@@ -82,4 +89,3 @@
   </div>
 </body>
 </html>
-
