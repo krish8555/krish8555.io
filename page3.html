@@ -4,57 +4,82 @@
   <title>Page 3</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #f78fb3, #ff9487);
-      color: #fff;
-      text-align: center;
+      background: linear-gradient(to bottom, #0F2027, #203A43, #2C5364);
       margin: 0;
       padding: 0;
-    }
-
-    h1 {
-      font-size: 32px;
-      margin-top: 40px;
-    }
-
-    .image-section {
       display: flex;
-      justify-content: flex-end;
-      align-items: flex-start;
-      padding: 40px;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+      color: #fff;
     }
 
-    .image-section img {
-      max-width: 100%;
-      border-radius: 8px;
+    .container {
+      text-align: center;
     }
 
-    .thought-section {
-      margin-top: 80px;
-      padding: 20px;
-    }
-
-    .thought-section h2 {
-      font-size: 24px;
+    .container img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
       margin-bottom: 20px;
     }
 
-    .thought-section p {
-      font-size: 18px;
+    .thought {
+      font-size: 24px;
       line-height: 1.5;
+      margin-bottom: 20px;
+    }
+
+    .image-container {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .image-container img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      margin: 0 10px;
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: center;
+    }
+
+    .button {
+      display: inline-block;
+      background-color: #FF6B6B;
+      color: #fff;
+      font-size: 18px;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      margin: 0 10px;
+      transition: background-color 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: #FF4D4D;
     }
   </style>
 </head>
 <body>
-  <h1>Page 3 - Thought of the Day</h1>
-
-  <div class="image-section">
-    <img src="image-placeholder.jpg" alt="Image">
-  </div>
-
-  <div class="thought-section">
-    <h2>START OF THE HOLY WAR</h2>
-    <p>Every lie incurs a debt on truth. Sooner or later, the debt is repaid.</p>
+  <div class="container">
+    <img src="image-placeholder.jpg" alt="Thought Image">
+    <p class="thought">START OF THE HOLY WAR</p>
+    <div class="image-container">
+      <img src="image2.jpg" alt="Image 2">
+      <img src="image3.jpg" alt="Image 3">
+    </div>
+    <div class="button-container">
+      <a href="page1.html" class="button">Page 1</a>
+      <a href="page2.html" class="button">Page 2</a>
+    </div>
   </div>
 </body>
 </html>
+
