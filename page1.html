@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dark Mode / Light Mode</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        transition: background-color 0.3s, color 0.3s;
+      }
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      .toggle-label {
+        display: inline-block;
+        margin-right: 10px;
+      }
+      .toggle-switch {
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        height: 30px;
+      }
+      .toggle-slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        transition: 0.4s;
+        border-radius: 30px;
+      }
+      .toggle-slider:before {
+        position: absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        transition: 0.4s;
+        border-radius: 50%;
+      }
+      input:checked + .toggle-slider {
+        background-color: #2196f3;
+      }
+      input:checked + .toggle-slider:before {
+        transform: translateX(30px);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Dark Mode / Light Mode</h1>
+      <label class="toggle-label">Dark Mode</label>
+      <label class="toggle-switch">
+        <input type="checkbox" id="dark-mode-toggle" />
+        <span class="toggle-slider"></span>
+      </label>
+    </div>
+    <script>
+      const darkModeToggle = document.getElementById("dark-mode-toggle");
+      const body = document.body;
+
+      // Check if user has a preference for dark mode
+      const prefersDarkMode = window.matchMedia(
+        "(prefers-color-scheme: dark)"
+      ).matches;
+
+      // Set initial mode based on user preference
+      if (prefersDarkMode) {
+        darkModeToggle.checked = true;
+        body.classList.add("dark-mode");
+      }
+
+      // Toggle dark mode
+      darkModeToggle.addEventListener("change", () => {
+        if (darkModeToggle.checked) {
+          body.classList.add("dark-mode");
+        } else {
+          body.classList.remove("dark-mode");
+        }
+      });
+    </script>
+  </body>
+</html>
