@@ -9,21 +9,37 @@
         font-family: Arial, sans-serif;
         transition: background-color 0.3s, color 0.3s;
       }
+
+      /* Light mode background and text color */
+      body.light-mode {
+        background-color: #fff;
+        color: #333;
+      }
+
+      /* Dark mode background and text color */
+      body.dark-mode {
+        background-color: #333;
+        color: #fff;
+      }
+
       .container {
         max-width: 800px;
         margin: 0 auto;
         padding: 20px;
       }
+
       .toggle-label {
         display: inline-block;
         margin-right: 10px;
       }
+
       .toggle-switch {
         position: relative;
         display: inline-block;
         width: 60px;
         height: 30px;
       }
+
       .toggle-slider {
         position: absolute;
         cursor: pointer;
@@ -35,6 +51,7 @@
         transition: 0.4s;
         border-radius: 30px;
       }
+
       .toggle-slider:before {
         position: absolute;
         content: "";
@@ -46,15 +63,17 @@
         transition: 0.4s;
         border-radius: 50%;
       }
+
       input:checked + .toggle-slider {
         background-color: #2196f3;
       }
+
       input:checked + .toggle-slider:before {
         transform: translateX(30px);
       }
     </style>
   </head>
-  <body>
+  <body class="light-mode">
     <div class="container">
       <h1>Dark Mode / Light Mode</h1>
       <label class="toggle-label">Dark Mode</label>
@@ -82,8 +101,10 @@
       darkModeToggle.addEventListener("change", () => {
         if (darkModeToggle.checked) {
           body.classList.add("dark-mode");
+          body.classList.remove("light-mode");
         } else {
           body.classList.remove("dark-mode");
+          body.classList.add("light-mode");
         }
       });
     </script>
